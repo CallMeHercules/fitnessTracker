@@ -2,6 +2,7 @@
     width: 40rem;
     max-width: 80%;
     margin: 5rem auto;
+    font: Helvetica;
 }
 
 .form-control label

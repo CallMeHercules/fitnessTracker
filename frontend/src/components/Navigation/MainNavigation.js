@@ -10,17 +10,22 @@ const mainNavigation = props => (
             return (
             <header className = "main-navigation">
                 <div className = "main-navigation_logo">
-                    <h1> liftTracker </h1>
+                {!context.token && 
+                    <NavLink to="/auth" style={{ textDecoration: 'none' }}>
+                        <h1> liftTracker </h1>
+                    </NavLink>}
+                {context.token && 
+                    <NavLink to="/lifts" style={{ textDecoration: 'none' }}>
+                        <h1> liftTracker </h1>
+                    </NavLink>}
                 </div>
             <nav className = "main-navigation_items">
                 <ul>
-                    {!context.token && 
-                    <li><NavLink to="/auth"> Login</NavLink></li>}
-                    {context.token && 
+                {context.token && 
                     <React.Fragment>
-                    <li><NavLink to="/lifts"> Lifts</NavLink></li>
-                    <li><NavLink to="/auth"> Profile</NavLink></li>
-                    <li><button>Logout</button></li>
+                        <li><button><NavLink to="/lifts"> Lifts</NavLink></button></li>
+                        <li><button><NavLink to="/profile"> Profile</NavLink></button></li>
+                        <li><button onClick={context.logout}>Logout</button></li>
                     </React.Fragment>}
                 </ul>
             </nav>

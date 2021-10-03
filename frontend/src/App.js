@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
 import AuthPage from './pages/Auth';
 import LiftsPage from './pages/Lifts';
+import ProfilePage from './pages/Profile';
 import MainNavigation from './components/Navigation/MainNavigation';
 import AuthContext from './context/auth-context';
 
@@ -32,9 +33,19 @@ class App extends Component {
                 <MainNavigation/>
                 <main className="main-content">
                     <Switch>
-                        {!this.state.token && <Redirect from="/" to="/auth" exact/>}
+                        {!this.state.token && <React.Fragment>
+                        <Redirect from="/" to="/auth" exact/>
+                        <Redirect from="/lifts" to="/auth" exact/>
+                        <Redirect from="" to="/auth" exact/>
                         <Route path="/auth" component={AuthPage}/>
+                        </React.Fragment>}
+                        
+                        {this.state.token && <React.Fragment>
+                        <Redirect from="/" to="/lifts" exact/>
+                        <Redirect from="/auth" to="/lifts" exact/>
                         <Route path="/lifts" component={LiftsPage}/>
+                        <Route path="/profile" component={ProfilePage}/>
+                        </React.Fragment>}
                     </Switch>
                 </main>
                 </AuthContext.Provider>

@@ -8,11 +8,14 @@
     padding: 0 1rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .main-navigation_logo h1 {
     margin: 0;
     font-size: 1.5rem;
+    color: orange;
 }
 
 .main-navigation_items {
@@ -24,10 +27,13 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    align-items: flex-end;
+    float: right;
 }
 
 .main-navigation_items li {
     margin: 0 1rem;
+    text-align: right;
 }
 
 .main-navigation_items a
@@ -37,7 +43,7 @@
     padding: 0.25rem, 0.5rem;
     border: none;
     font: inherit;
-    background: transparent;
+    background: #5B2489;
     cursor: pointer;
 }
 
@@ -47,4 +53,6 @@
 ,.main-navigation_items button:hover
 ,.main-navigation_items button:active{
     color: orange;
+    background: purple;
+    
 }
