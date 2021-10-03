@@ -1,6 +1,5 @@
 .modal {
-    width: 50rem;
-    max-width: 90%;
+    width: 90%;
     background: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     position: fixed;
@@ -8,9 +7,48 @@
     left: 5%;
 }
 
+.modal_header {
+    padding: 1rem;
+    background: purple;
+    color: orange;
+}
+
+.modal_header h1 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.modal_content {
+    padding: 1rem;
+}
+
+.modal_actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.modal_actions button {
+    background: purple;
+    font: inherit;
+    border: 1px solid purple;
+    border-radius: 3px;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    color: orange;
+    cursor: pointer;
+}
+
+.modal_actions button:hover
+,.modal_actions button:active {
+    background: orange;
+    color: purple;
+    border-color: orange;
+}
+
 @media (min-width: 768px) {
      .modal {
-         width: 50rem;
-         left: calc((100% - 50rem)/2);
+         width: 30rem;
+         left: calc((100% - 30rem)/2);
      }
 }
