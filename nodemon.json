@@ -1,7 +1,0 @@
-{
-    "env": {
-        "MONGO_USER": "msullivan",
-        "MONGO_PASSWORD": "Y5QebHMTANJRHXqJ",
-        "MONGO_DB": "fit-app-db"
-    }
-}
